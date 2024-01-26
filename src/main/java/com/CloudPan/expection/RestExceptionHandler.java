@@ -23,8 +23,7 @@ public class RestExceptionHandler {
      * 默认全局异常处理。
      * @param e the e
      * @return ResultData
-     */
-    @ExceptionHandler(Exception.class)
+     */    @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public ResultData<String> exception(Exception e) {
         log.error("全局异常信息 ex={}", e.getMessage(), e);

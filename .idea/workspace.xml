@@ -4,32 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3333bdaa-df60-4e7f-b25a-c1d5c3ba09e0" name="更改" comment="网盘Demo,初始化项目">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/CloudPan/config/MybaitsPlusConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/CloudPan/config/Webconfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/CloudPan/controller/utils/ResponseAdvice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/CloudPan/controller/utils/ResultData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/CloudPan/controller/utils/ReturnCodeEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/CloudPan/expection/RestExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/CloudPan/interceptor/AuthorizationInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/CloudPan/utils/JwtUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CloudPan/controller/UserControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CloudPan/mapper/UserMapperTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="3333bdaa-df60-4e7f-b25a-c1d5c3ba09e0" name="更改" comment="阶段性成就，完成UserController的开发，完成了统一结果返回，全局异常处理，Jwt请求拦截(封装自己的jwt工具等)，遗留了一些问题，注册用户Mac地址 和创建时间未添加，用户列表的分页功能等。">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/CloudPan/config/KaptchaConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/CloudPan/utils/KaptchaUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/default_avatar.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/CloudPan/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CloudPan/controller/FileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/CloudPan/config/MybaitsPlusConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CloudPan/config/MybaitsPlusConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/CloudPan/config/Webconfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CloudPan/config/WebConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/CloudPan/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CloudPan/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/CloudPan/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CloudPan/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/CloudPan/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CloudPan/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/CloudPan/expection/RestExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CloudPan/expection/RestExceptionHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/CloudPan/controller/FileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CloudPan/controller/FileController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/CloudPan/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CloudPan/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/CloudPan/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CloudPan/entity/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/CloudPan/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CloudPan/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CloudPan/demo/DemoApplicationTests.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,6 +94,9 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\学习资料\springboot\demo\src\main\resources\static" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.CloudPan.controller" />
       <recent name="com.CloudPan.mapper" />
@@ -178,7 +168,12 @@
       <workItem from="1705576859011" duration="2317000" />
       <workItem from="1705661438352" duration="1375000" />
       <workItem from="1705662826707" duration="6489000" />
-      <workItem from="1705748386062" duration="7466000" />
+      <workItem from="1705748386062" duration="8512000" />
+      <workItem from="1706062387645" duration="733000" />
+      <workItem from="1706155164131" duration="6890000" />
+      <workItem from="1706192907518" duration="4341000" />
+      <workItem from="1706243111825" duration="917000" />
+      <workItem from="1706259197980" duration="5181000" />
     </task>
     <task id="LOCAL-00001" summary="网盘Demo,初始化项目">
       <option name="closed" value="true" />
@@ -188,7 +183,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705559352459</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="阶段性成就，完成UserController的开发，完成了统一结果返回，全局异常处理，Jwt请求拦截(封装自己的jwt工具等)，遗留了一些问题，注册用户Mac地址 和创建时间未添加，用户列表的分页功能等。">
+      <option name="closed" value="true" />
+      <created>1705759067919</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1705759067919</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,7 +208,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="demo" />
+                        <option value="HEAD" />
                       </list>
                     </value>
                   </entry>
@@ -219,6 +222,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="网盘Demo,初始化项目" />
-    <option name="LAST_COMMIT_MESSAGE" value="网盘Demo,初始化项目" />
+    <MESSAGE value="阶段性成就，完成UserController的开发，完成了统一结果返回，全局异常处理，Jwt请求拦截(封装自己的jwt工具等)，遗留了一些问题，注册用户Mac地址 和创建时间未添加，用户列表的分页功能等。" />
+    <option name="LAST_COMMIT_MESSAGE" value="阶段性成就，完成UserController的开发，完成了统一结果返回，全局异常处理，Jwt请求拦截(封装自己的jwt工具等)，遗留了一些问题，注册用户Mac地址 和创建时间未添加，用户列表的分页功能等。" />
   </component>
 </project>

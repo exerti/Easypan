@@ -6,11 +6,20 @@ import com.CloudPan.controller.utils.ReturnCodeEnum;
 import com.CloudPan.entity.User;
 import com.CloudPan.service.impl.UserServiceImpl;
 import com.CloudPan.utils.JwtUtils;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.util.List;
@@ -39,13 +48,12 @@ public class UserController {
             return ResultData.success("注册成功");
         return ResultData.fail(999, "操作失败");
     }
-    @GetMapping("/login")
-    public ResultData<User> login(@RequestParam("username") String username, @RequestParam("password") String password) {
-
+    @GetMapping("/login") public ResultData<User> login(@RequestParam("username") String username, @RequestParam("password") String password  , HttpSession  session) {
         User user = userService.login(username, password);
         if (user != null){
             String token = JwtUtils.generateToken();
             user.setToken(token);
+            session.setAttribute("uid" , user.getUserId());
             return ResultData.success(user);
         }
         return ResultData.fail(ReturnCodeEnum.USER_NOT_EXIST);
@@ -98,8 +106,80 @@ public class UserController {
         return ResultData.fail(999, "操作失败");
     }
 
+    @GetMapping("/getinfo")
+    public ResultData<User> getUserinfo(HttpServletRequest request) {
+         Integer uid=  (Integer) request.getSession().getAttribute("uid");
+        User  user  =  userService .getOne(new QueryWrapper<User>().eq("user_id",uid));
+         return ResultData.success(user);
+    }
 
-    private String getMacAddress(HttpServletRequest request) {
+    @PostMapping("/logout")
+    public ResultData<String> logout(HttpServletRequest request) {
+        // 清除session中的用户信息
+        request.getSession().removeAttribute("uid");
+        return ResultData.success("退出成功");
+    }
+
+    @PostMapping("/resetPwd")
+    public ResultData<String> resetPwd(HttpServletRequest request , @RequestParam  String Pwd) {
+        //针对Pwd进行密码效验
+        //采用邮箱验证码的技术
+
+        Integer uid=  (Integer) request.getSession().getAttribute("uid");
+        UpdateWrapper<User> updateWrapper = new UpdateWrapper<>();
+        boolean IsUpdated = userService.update(updateWrapper.eq("user_id", uid).set("password", Pwd));
+        if (IsUpdated)
+            return ResultData.success("修改成功");
+        return ResultData.fail(999, "操作失败");
+    }
+
+
+    @PostMapping("/updatePwd")
+    public ResultData<String> updatePwd(HttpServletRequest request , @RequestParam  String oldPwd,@RequestParam  String newPwd) {
+
+        //针对Pwd进行密码效验
+
+        Integer uid = (Integer) request.getSession().getAttribute("uid");
+        User user = userService.getOne(new QueryWrapper<User>().eq("user_id", uid));
+        if (user.getPassword().equals(oldPwd)) {
+            UpdateWrapper<User> updateWrapper = new UpdateWrapper<>();
+            boolean IsUpdated = userService.update(updateWrapper.eq("user_id", uid).set("password", newPwd));
+            if (IsUpdated)
+                return ResultData.success("修改成功");
+        }
+        return ResultData.fail(999, "操作失败");
+    }
+
+    @GetMapping("getAvator/{userId}")
+    public  ResultData<String> getAvator(HttpServletResponse response , @PathVariable Integer userId) {
+        //通过拼接目录和用户id,文件后缀 得到文件路径，  以文件流的方式 返回给前端， 如果没有就返回默认头像
+
+        return  ResultData.success("获取头像成功");
+    }
+
+    @PostMapping("updateAvator")
+    public  ResultData<String> updateAvator(HttpServletRequest request , @RequestParam MultipartFile avator ){
+
+
+        return   ResultData.success("修改头像成功");
+    }
+
+
+    private  void  printNoDefaultImage ( HttpServletResponse response){
+        response.setContentType("application/json;charset=UTF-8");
+        response.setStatus(HttpStatus.OK.value());
+        PrintWriter writer = null;
+        try {
+            writer = response.getWriter();
+            writer.println("请在头像目录下放置默认头像default_avatar.jpg");
+            writer.close();
+        } catch (IOException e) {
+            throw new RuntimeException("输出默认头像失败");
+        }
+
+    }
+
+ private String getMacAddress(HttpServletRequest request) {
         String macAddress = null;
         try {
             InetAddress ipAddress = InetAddress.getByName(request.getRemoteAddr());
