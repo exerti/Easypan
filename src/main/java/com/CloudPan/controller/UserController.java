@@ -48,12 +48,12 @@ public class UserController {
             return ResultData.success("注册成功");
         return ResultData.fail(999, "操作失败");
     }
-    @GetMapping("/login") public ResultData<User> login(@RequestParam("username") String username, @RequestParam("password") String password  , HttpSession  session) {
+    @GetMapping("/login") public ResultData<User> login(@RequestParam("username") String username, @RequestParam("password") String password  , HttpServletRequest request) {
         User user = userService.login(username, password);
         if (user != null){
             String token = JwtUtils.generateToken();
             user.setToken(token);
-            session.setAttribute("uid" , user.getUserId());
+            request.getSession().setAttribute("uid" , user.getUserId());
             return ResultData.success(user);
         }
         return ResultData.fail(ReturnCodeEnum.USER_NOT_EXIST);
@@ -108,8 +108,8 @@ public class UserController {
 
     @GetMapping("/getinfo")
     public ResultData<User> getUserinfo(HttpServletRequest request) {
-         Integer uid=  (Integer) request.getSession().getAttribute("uid");
-        User  user  =  userService .getOne(new QueryWrapper<User>().eq("user_id",uid));
+         Integer uid= (Integer) request.getSession().getAttribute("uid");
+         User  user  =  userService .getOne(new QueryWrapper<User>().eq("user_id",uid));
          return ResultData.success(user);
     }
 

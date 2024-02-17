@@ -6,6 +6,9 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import java.time.LocalDateTime;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
+import java.util.Objects;
+
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -22,6 +25,7 @@ import lombok.experimental.Accessors;
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 @TableName("tb_file")
+@AllArgsConstructor
 public class File implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -48,7 +52,7 @@ public class File implements Serializable {
      * 文件大小
      */
     @TableField("file_size")
-    private String fileSize;
+    private Long fileSize;
 
     /**
      * 文件名
@@ -116,5 +120,60 @@ public class File implements Serializable {
     @TableField("del_flag")
     private Integer delFlag;
 
+    public File(Integer userId, String md5, long size, String originalFilename, String filePath, LocalDateTime now, String fileType) {
+
+
+        this.userId = userId;
+        this.fileMd5 = md5;
+        this.fileSize = size;
+        this.fileName = originalFilename;
+        this.filePath = filePath;
+        this.createTime = now;
+        this.fileType = handlerFileType(fileType);
+
+    }
+
+
+    public String getAbsolutePath() {
+        return filePath;
+    }
+
+    ;
+
+
+    public Integer handlerFileType(String fileType) {
+        if (Objects.equals(fileType, ".txt")) {
+            return 7;
+        }
+        if (Objects.equals(fileType, ".docx") || Objects.equals(fileType, ".word")) {
+            return 5;
+        }
+        if (Objects.equals(fileType, ".pdf")) {
+            return 4;
+        }
+
+        if (Objects.equals(fileType, ".jpg") || Objects.equals(fileType, ".png") || Objects.equals(fileType, ".gif")) {
+            return 3;
+        }
+        if (Objects.equals(fileType, ".mp3") || Objects.equals(fileType, ".wav")) {
+            return 1;
+        }
+        if (Objects.equals(fileType, ".mp4") || Objects.equals(fileType, ".avi")) {
+            return 2;
+        }
+        if (Objects.equals(fileType, ".zip") || Objects.equals(fileType, ".rar")
+                || Objects.equals(fileType, ".7z") || Objects.equals(fileType, ".gz")
+                || Objects.equals(fileType, ".tar") || Objects.equals(fileType, ".bz2")
+                || Objects.equals(fileType, ".xz") || Objects.equals(fileType, ".jar")
+                || Objects.equals(fileType, ".iso") || Objects.equals(fileType, ".img")
+                || Objects.equals(fileType, ".apk") || Objects.equals(fileType, ".ipa")
+                || Objects.equals(fileType, ".aac") || Objects.equals(fileType, ".flac"))
+        {
+            return 9;
+        }
+
+        return  10;
+
+    }
 
 }
