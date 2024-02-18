@@ -3,6 +3,7 @@ package com.CloudPan.service.impl;
 import com.CloudPan.entity.File;
 import com.CloudPan.mapper.FileMapper;
 import com.CloudPan.service.IFileService;
+import com.CloudPan.utils.FileUtil;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -27,10 +28,14 @@ import java.util.logging.Logger;
 public class FileServiceImpl extends ServiceImpl<FileMapper, File> implements IFileService {
     @Value("${file.desc}")
     private String fileDesc;
-    public Long getAllFileSize(Integer uid) {
+    public String getAllFileSize(Integer uid) {
        QueryWrapper<File> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("user_id" ,uid);
-        return   baseMapper.selectCount(queryWrapper);
+        ;
+        return FileUtil.GetLength(baseMapper.selectList(queryWrapper)
+                .stream()
+                .mapToLong(File::getFileSize)
+                .sum());
     }
 
     public boolean getFileByMd5(String md5) {
@@ -58,10 +63,5 @@ public class FileServiceImpl extends ServiceImpl<FileMapper, File> implements IF
        }
        return true;
     }
-    public  String getFileType(MultipartFile file){
-        String originalFilename = file.getOriginalFilename();
-          String ext = "." +
-                   originalFilename.substring(originalFilename.lastIndexOf(".") + 1);
-          return  ext;
-    }
+
 }

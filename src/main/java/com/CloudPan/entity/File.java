@@ -1,5 +1,6 @@
 package com.CloudPan.entity;
 
+import com.CloudPan.entity.enums.FileTypeEnums;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
@@ -120,7 +121,7 @@ public class File implements Serializable {
     @TableField("del_flag")
     private Integer delFlag;
 
-    public File(Integer userId, String md5, long size, String originalFilename, String filePath, LocalDateTime now, String fileType) {
+    public File(Integer userId, String md5, long size, String originalFilename, String filePath, LocalDateTime now, Integer fileType) {
 
 
         this.userId = userId;
@@ -129,7 +130,9 @@ public class File implements Serializable {
         this.fileName = originalFilename;
         this.filePath = filePath;
         this.createTime = now;
-        this.fileType = handlerFileType(fileType);
+        this.lastUpdateTime = now;
+        this.fileType =  fileType ;
+        this.fileCategory = FileTypeEnums.getByType(fileType).getCategory().getCategory();
 
     }
 
@@ -138,42 +141,6 @@ public class File implements Serializable {
         return filePath;
     }
 
-    ;
 
-
-    public Integer handlerFileType(String fileType) {
-        if (Objects.equals(fileType, ".txt")) {
-            return 7;
-        }
-        if (Objects.equals(fileType, ".docx") || Objects.equals(fileType, ".word")) {
-            return 5;
-        }
-        if (Objects.equals(fileType, ".pdf")) {
-            return 4;
-        }
-
-        if (Objects.equals(fileType, ".jpg") || Objects.equals(fileType, ".png") || Objects.equals(fileType, ".gif")) {
-            return 3;
-        }
-        if (Objects.equals(fileType, ".mp3") || Objects.equals(fileType, ".wav")) {
-            return 1;
-        }
-        if (Objects.equals(fileType, ".mp4") || Objects.equals(fileType, ".avi")) {
-            return 2;
-        }
-        if (Objects.equals(fileType, ".zip") || Objects.equals(fileType, ".rar")
-                || Objects.equals(fileType, ".7z") || Objects.equals(fileType, ".gz")
-                || Objects.equals(fileType, ".tar") || Objects.equals(fileType, ".bz2")
-                || Objects.equals(fileType, ".xz") || Objects.equals(fileType, ".jar")
-                || Objects.equals(fileType, ".iso") || Objects.equals(fileType, ".img")
-                || Objects.equals(fileType, ".apk") || Objects.equals(fileType, ".ipa")
-                || Objects.equals(fileType, ".aac") || Objects.equals(fileType, ".flac"))
-        {
-            return 9;
-        }
-
-        return  10;
-
-    }
 
 }

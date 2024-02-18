@@ -20,5 +20,5 @@ image:
   default_avator :   ./src/main/resources/static/img/default_avator.png
 
 file:
-  desc: D:\\sim-file\\
+  desc: D:\sim-file\
 
