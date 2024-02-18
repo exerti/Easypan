@@ -5,23 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3333bdaa-df60-4e7f-b25a-c1d5c3ba09e0" name="更改" comment="完成用户信息、分页，解决无法分页问题。 同时新添加了重置、更新密码； 获取头像，更新头像的接口。 后续需要完善的是重置密码和邮箱绑定，实现头像相关，用户空间服务模块。&#10;暂且开始做文件模块。">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/CloudPan/entity/FileUpload/FileUploadDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/CloudPan/entity/FileUpload/UploadResultVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/CloudPan/utils/FfmpegUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/CloudPan/entity/enums/DateTimePatternEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/CloudPan/entity/enums/FileCategoryEnums.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/CloudPan/entity/enums/FileDelFlagEnums.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/CloudPan/entity/enums/FileFolderTypeEnums.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/CloudPan/entity/enums/FileStatusEnums.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/CloudPan/entity/enums/FileTypeEnums.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/CloudPan/utils/FileUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/CloudPan/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CloudPan/config/WebConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/CloudPan/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CloudPan/controller/FileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/CloudPan/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CloudPan/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/CloudPan/entity/File.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CloudPan/entity/File.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/CloudPan/service/impl/FileServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CloudPan/service/impl/FileServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/CloudPan/config/WebConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CloudPan/config/WebConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/CloudPan/controller/FileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CloudPan/controller/FileController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/CloudPan/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CloudPan/controller/UserController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/CloudPan/entity/File.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CloudPan/entity/File.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/CloudPan/service/impl/FileServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CloudPan/service/impl/FileServiceImpl.class" afterDir="false" />
     </list>
@@ -34,6 +33,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit5 Test Class" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -69,35 +69,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "deletionFromPopupRequiresConfirmation": "false",
-    "ignore.virus.scanning.warn.message": "true",
-    "jdk.selected.JAVA_MODULE": "corretto-17",
-    "last_opened_file_path": "D:/学习资料/springboot/demo",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/学习资料/springboot/demo&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -218,6 +218,26 @@
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="master" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="HEAD" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
