@@ -4,16 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3333bdaa-df60-4e7f-b25a-c1d5c3ba09e0" name="更改" comment=" 添加了未进行版本管理的文件，同时添加了IpUtil 来解析IP  和 Mac">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/CloudPan/entity/constants/Constants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/CloudPan/entity/dto/NewFolderDTO.java" afterDir="false" />
+    <list default="true" id="3333bdaa-df60-4e7f-b25a-c1d5c3ba09e0" name="更改" comment="添加了文件目录的字段，开始写添加文件凯目录， 其实有相关的hutool 工具">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/CloudPan/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CloudPan/controller/FileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/CloudPan/entity/File.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CloudPan/entity/File.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/CloudPan/service/IFileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CloudPan/service/IFileService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/CloudPan/service/impl/FileServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CloudPan/service/impl/FileServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/CloudPan/utils/FfmpegUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CloudPan/utils/FfmpegUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/CloudPan/controller/FileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CloudPan/controller/FileController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/CloudPan/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CloudPan/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/CloudPan/entity/File.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CloudPan/entity/File.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/CloudPan/service/IFileService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CloudPan/service/IFileService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/CloudPan/service/impl/FileServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CloudPan/service/impl/FileServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/CloudPan/utils/FfmpegUtil.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +37,9 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/CloudPan/service/impl/FileServiceImpl.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -60,35 +64,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "deletionFromPopupRequiresConfirmation": "false",
-    "ignore.virus.scanning.warn.message": "true",
-    "jdk.selected.JAVA_MODULE": "corretto-17",
-    "last_opened_file_path": "D:/学习资料/springboot/demo",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/学习资料/springboot/demo&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -177,7 +181,8 @@
       <workItem from="1707805802876" duration="1717000" />
       <workItem from="1707963631676" duration="3590000" />
       <workItem from="1708158642420" duration="16318000" />
-      <workItem from="1708321087975" duration="8658000" />
+      <workItem from="1708321087975" duration="9348000" />
+      <workItem from="1708343242222" duration="6943000" />
     </task>
     <task id="LOCAL-00001" summary="网盘Demo,初始化项目">
       <option name="closed" value="true" />
@@ -227,7 +232,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708321614194</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="添加了文件目录的字段，开始写添加文件凯目录， 其实有相关的hutool 工具">
+      <option name="closed" value="true" />
+      <created>1708334297338</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1708334297338</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,7 +300,8 @@
     <MESSAGE value="完成用户信息、分页，解决无法分页问题。 同时新添加了重置、更新密码； 获取头像，更新头像的接口。 后续需要完善的是重置密码和邮箱绑定，实现头像相关，用户空间服务模块。&#10;暂且开始做文件模块。" />
     <MESSAGE value="添加了一些枚举类和工具类，结局了文件md5，遗留了文件目录，文件封面。增加了一些教训，每次先开始写一个模块，要新新开一个分支，还原分支时要注意。需要解决的问题：多文件上传，分片上传。" />
     <MESSAGE value=" 添加了未进行版本管理的文件，同时添加了IpUtil 来解析IP  和 Mac" />
-    <option name="LAST_COMMIT_MESSAGE" value=" 添加了未进行版本管理的文件，同时添加了IpUtil 来解析IP  和 Mac" />
+    <MESSAGE value="添加了文件目录的字段，开始写添加文件凯目录， 其实有相关的hutool 工具" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加了文件目录的字段，开始写添加文件凯目录， 其实有相关的hutool 工具" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

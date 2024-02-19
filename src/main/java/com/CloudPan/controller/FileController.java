@@ -3,6 +3,7 @@ package com.CloudPan.controller;
 
 
 import com.CloudPan.controller.utils.ResultData;
+import com.CloudPan.controller.utils.ReturnCodeEnum;
 import com.CloudPan.entity.File;
 import com.CloudPan.entity.dto.NewFolderDTO;
 import com.CloudPan.entity.enums.FileTypeEnums;
@@ -76,9 +77,8 @@ public class FileController {
         }
 
 
-//      String filesID = UUID.randomUUID().toString();
         Integer uid= (Integer) request.getSession().getAttribute("uid");
-        String FilePath = fileDesc + file.getOriginalFilename();
+        String FilePath = fileDesc +filePid+ '\\'+file.getOriginalFilename();
         String Suffix = FileUtil.getFileSuffix(file);
         if(fileName==null){
             fileName = file.getOriginalFilename();
@@ -89,7 +89,8 @@ public class FileController {
         File Files  =new File(uid,md5,file.getSize(),fileName,FilePath, LocalDateTime.now(),fileType);
         fileService.save(Files);
         fileService.SaveFile(file);
-        return ResultData.success("");
+
+        return ResultData.success(ReturnCodeEnum.RC100.getMessage());
 
     }
 

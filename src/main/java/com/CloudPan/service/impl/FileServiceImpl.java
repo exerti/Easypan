@@ -13,11 +13,13 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.tomcat.util.buf.StringUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.text.MessageFormat;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
@@ -74,18 +76,22 @@ public class FileServiceImpl extends ServiceImpl<FileMapper, File> implements IF
     }
 
     @Override
-    public File newFloder(NewFolderDTO folderDTO, Integer userId) {
+    public File newFloder(NewFolderDTO folderDTO, Integer userId ) {
         // 校验文件夹名
         String rename = autoRename(folderDTO.getFilePid(), userId, folderDTO.getFilename());
         // 构造属性
         File fileInfo = new File();
         fileInfo.setUserId(userId);
         fileInfo.setFileName(rename);
+        fileInfo.setFilePath(fileDesc + rename);
+        fileInfo.setCreateTime(LocalDateTime.now());
+        fileInfo.setLastUpdateTime(LocalDateTime.now());
         fileInfo.setFilepid(folderDTO.getFilePid());
         fileInfo.setFolderType(FileFolderTypeEnums.FOLDER.getType());
         fileInfo.setStatus(FileStatusEnums.USING.getStatus());
         // 保存
         this.save(fileInfo);
+        cn.hutool.core.io.FileUtil.mkdir(fileDesc + rename);
         // 返回
 //        FileInfoVO fileInfoVO = new FileInfoVO();
 //        BeanUtils.copyProperties(fileInfo, fileInfoVO);
@@ -95,7 +101,7 @@ public class FileServiceImpl extends ServiceImpl<FileMapper, File> implements IF
     @Override
     public List<File> listFolderByIds(String[] ids) {
         LambdaQueryWrapper<File> wrapper = new LambdaQueryWrapper<>();
-        wrapper.select(File::getFileId, File::getFileName).in(File::getFileId, Arrays.asList(ids)).last("order by field(id, \"" + StringUtils.join(ids, "\",\"") + "\")");
+        wrapper.select(File::getFileId, File::getFileName).in(File::getFileId, Arrays.asList(ids)).last("order by field(id, \"" + StringUtils.join(ids) + "\")");
         List<File> list = list(wrapper);
         List<File> fileInfoVOS = list.stream().map(item -> {
             File fileInfoVO = new File();
@@ -116,11 +122,13 @@ public class FileServiceImpl extends ServiceImpl<FileMapper, File> implements IF
         int count = (int) this.count(new LambdaQueryWrapper<File>()
                 .eq(File::getUserId, userId)
                 .eq(File::getFilepid, filePid)
-                .eq(File::getDelFlag, FileDelFlagEnums.USING.getFlag())
+                .eq(File::getStatus, FileDelFlagEnums.USING.getFlag())
                 .eq(File::getFileName, filename));
+
         if (count > 0) {
-            filename = LocalDateTime.now().getMonth() + filename ;
-        }
-        return filename;
+            filename = MessageFormat.format("{0}\\{1}_{2}", filePid, filename, count);
+        }else
+        filename = MessageFormat.format("{0}\\{1}", filePid, filename); ;
+        return  filename ;
     }
 }
