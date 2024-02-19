@@ -4,25 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3333bdaa-df60-4e7f-b25a-c1d5c3ba09e0" name="更改" comment="完成用户信息、分页，解决无法分页问题。 同时新添加了重置、更新密码； 获取头像，更新头像的接口。 后续需要完善的是重置密码和邮箱绑定，实现头像相关，用户空间服务模块。&#10;暂且开始做文件模块。">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/CloudPan/entity/enums/DateTimePatternEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/CloudPan/entity/enums/FileCategoryEnums.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/CloudPan/entity/enums/FileDelFlagEnums.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/CloudPan/entity/enums/FileFolderTypeEnums.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/CloudPan/entity/enums/FileStatusEnums.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/CloudPan/entity/enums/FileTypeEnums.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/CloudPan/utils/FileUtil.java" afterDir="false" />
+    <list default="true" id="3333bdaa-df60-4e7f-b25a-c1d5c3ba09e0" name="更改" comment="添加了一些枚举类和工具类，结局了文件md5，遗留了文件目录，文件封面。增加了一些教训，每次先开始写一个模块，要新新开一个分支，还原分支时要注意。需要解决的问题：多文件上传，分片上传。">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/CloudPan/utils/IpUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/CloudPan/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CloudPan/config/WebConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/CloudPan/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CloudPan/controller/FileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/CloudPan/entity/File.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CloudPan/entity/File.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/CloudPan/service/impl/FileServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CloudPan/service/impl/FileServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/CloudPan/config/WebConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CloudPan/config/WebConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/CloudPan/controller/FileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CloudPan/controller/FileController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/CloudPan/entity/File.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CloudPan/entity/File.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/CloudPan/service/impl/FileServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/CloudPan/service/impl/FileServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/CloudPan/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CloudPan/controller/UserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,6 +171,7 @@
       <workItem from="1707805802876" duration="1717000" />
       <workItem from="1707963631676" duration="3590000" />
       <workItem from="1708158642420" duration="16318000" />
+      <workItem from="1708321087975" duration="426000" />
     </task>
     <task id="LOCAL-00001" summary="网盘Demo,初始化项目">
       <option name="closed" value="true" />
@@ -211,7 +197,23 @@
       <option name="project" value="LOCAL" />
       <updated>1706264744754</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="添加了一些枚举类和工具类，结局了文件md5，遗留了文件目录，文件封面。增加了一些教训，每次先开始写一个模块，要新新开一个分支，还原分支时要注意。需要解决的问题：多文件上传，分片上传。">
+      <option name="closed" value="true" />
+      <created>1708273706953</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1708273706953</updated>
+    </task>
+    <task id="LOCAL-00005" summary="添加了一些枚举类和工具类，结局了文件md5，遗留了文件目录，文件封面。增加了一些教训，每次先开始写一个模块，要新新开一个分支，还原分支时要注意。需要解决的问题：多文件上传，分片上传。">
+      <option name="closed" value="true" />
+      <created>1708273722805</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1708273722805</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,7 +271,8 @@
     <MESSAGE value="网盘Demo,初始化项目" />
     <MESSAGE value="阶段性成就，完成UserController的开发，完成了统一结果返回，全局异常处理，Jwt请求拦截(封装自己的jwt工具等)，遗留了一些问题，注册用户Mac地址 和创建时间未添加，用户列表的分页功能等。" />
     <MESSAGE value="完成用户信息、分页，解决无法分页问题。 同时新添加了重置、更新密码； 获取头像，更新头像的接口。 后续需要完善的是重置密码和邮箱绑定，实现头像相关，用户空间服务模块。&#10;暂且开始做文件模块。" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成用户信息、分页，解决无法分页问题。 同时新添加了重置、更新密码； 获取头像，更新头像的接口。 后续需要完善的是重置密码和邮箱绑定，实现头像相关，用户空间服务模块。&#10;暂且开始做文件模块。" />
+    <MESSAGE value="添加了一些枚举类和工具类，结局了文件md5，遗留了文件目录，文件封面。增加了一些教训，每次先开始写一个模块，要新新开一个分支，还原分支时要注意。需要解决的问题：多文件上传，分片上传。" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加了一些枚举类和工具类，结局了文件md5，遗留了文件目录，文件封面。增加了一些教训，每次先开始写一个模块，要新新开一个分支，还原分支时要注意。需要解决的问题：多文件上传，分片上传。" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -5,6 +5,7 @@ import com.CloudPan.controller.utils.ResultData;
 import com.CloudPan.controller.utils.ReturnCodeEnum;
 import com.CloudPan.entity.User;
 import com.CloudPan.service.impl.UserServiceImpl;
+import com.CloudPan.utils.IpUtil;
 import com.CloudPan.utils.JwtUtils;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
@@ -22,6 +23,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
+import java.net.SocketException;
+import java.net.UnknownHostException;
 import java.util.List;
 
 /**
@@ -39,9 +42,9 @@ public class UserController {
     private UserServiceImpl userService;
 
     @PostMapping("/register")
-    public ResultData<String> register(@RequestBody User user ,HttpServletRequest request) {
+    public ResultData<String> register(@RequestBody User user ,HttpServletRequest request) throws SocketException, UnknownHostException {
         //先查数据库中是否由该对象，没有该对象就添加
-        String macAddress = getMacAddress(request);
+        String macAddress = IpUtil.getMacadress(request);
         user.setMacAddress(macAddress);
         boolean IsAdded = userService.save(user);
         if (IsAdded)
