@@ -4,7 +4,7 @@ package com.CloudPan.controller;
 
 import com.CloudPan.controller.utils.ResultData;
 import com.CloudPan.entity.File;
-import com.CloudPan.entity.User;
+import com.CloudPan.entity.dto.NewFolderDTO;
 import com.CloudPan.entity.enums.FileTypeEnums;
 import com.CloudPan.service.impl.FileServiceImpl;
 import com.CloudPan.utils.FileUtil;
@@ -12,8 +12,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.plugins.pagination.PageDTO;
 import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import org.apache.catalina.Session;
+import jakarta.validation.constraints.NotEmpty;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
@@ -21,9 +20,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.List;
-import java.util.UUID;
 
 /**
  * <p>
@@ -97,6 +94,22 @@ public class FileController {
     }
 
 
+    /**
+     * 新建文件夹
+     * @param folder
+     * @param request
+     * @return
+     */
+
+    @PostMapping("/newFolder")
+    public File newFolder(@RequestBody NewFolderDTO folder , HttpServletRequest request){
+        return  fileService.newFloder(folder,(Integer) request.getSession().getAttribute("uid"));
+    }
+
+//    @GetMapping("/getFolderInfo")
+//    public ResultData getFolderInfo(HttpServletRequest request , @NotEmpty String path){
+//        return File
+//    }
 
 
 }

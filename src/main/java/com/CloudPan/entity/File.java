@@ -12,6 +12,7 @@ import java.util.Objects;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 /**
@@ -27,6 +28,7 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 @TableName("tb_file")
 @AllArgsConstructor
+@NoArgsConstructor
 public class File implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -85,6 +87,9 @@ public class File implements Serializable {
     @TableField("last_update_time")
     private LocalDateTime lastUpdateTime;
 
+    @TableField("filepid")
+    private String  filepid;
+
     /**
      * 0：目录  1：文件
      */
@@ -121,6 +126,8 @@ public class File implements Serializable {
     @TableField("del_flag")
     private Integer delFlag;
 
+
+
     public File(Integer userId, String md5, long size, String originalFilename, String filePath, LocalDateTime now, Integer fileType) {
 
 
@@ -135,6 +142,7 @@ public class File implements Serializable {
         this.fileCategory = FileTypeEnums.getByType(fileType).getCategory().getCategory();
 
     }
+
 
 
     public String getAbsolutePath() {
